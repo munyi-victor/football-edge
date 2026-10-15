@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-pitch-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-pitch-bg text-ink-light font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  ::selection {
+    @apply bg-edge-green/30 text-white;
+  }
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+}
+
+@layer components {
+  .container-edge {
+    @apply mx-auto max-w-content px-4 sm:px-6 lg:px-8;
+  }
+  .card {
+    @apply bg-pitch-surface border border-pitch-border rounded-card;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-edge-green px-4 py-2.5 text-sm font-semibold text-pitch-bg transition-colors hover:bg-edge-greenDark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-edge-green;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-pitch-borderLight bg-pitch-elevated px-4 py-2.5 text-sm font-semibold text-ink-light transition-colors hover:border-edge-green/60 hover:text-edge-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-edge-green;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:text-ink-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-edge-green;
+  }
+  .skeleton {
+    @apply animate-pulse rounded-md bg-pitch-elevated;
+  }
+  .pill {
+    @apply inline-flex items-center rounded-full border border-pitch-border px-2.5 py-1 text-xs font-medium text-ink-muted;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
